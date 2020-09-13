@@ -3,11 +3,12 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 import { Loader, Table } from 'rsuite';
 
-const { Column, HeaderCell, Cell, Pagination } = Table;
+const { Column, HeaderCell, Cell } = Table;
 
 function Admin() {
   const { isLoading, error, data } = useQuery('fetchUsers', () => axios('http://localhost:3001/users'));
 
+  console.log(data);
   return (
     <div>
       <h2>All users</h2>
